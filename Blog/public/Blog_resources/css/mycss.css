@@ -1,0 +1,192 @@
+.blog-posts  {
+    background-color: #f7f7f7;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+  }
+
+.blog-posts .container .row {
+    justify-content: center;
+}
+
+.blog-posts .down-content p {
+    height: 230px;
+}
+
+.navbar .navbar-nav a.nav-link {
+    font-size: 1.125rem;
+}
+
+.owl-banner .item .item-content .meta-category span {
+    color: white;
+}
+
+.owl-banner .item .item-content h4 {
+    color: #414345;
+}
+
+.owl-banner .item .item-content ul li a {
+    color: #414345;
+}
+  
+
+
+/* ------------------------------------------------------------------- 
+ * ## form container
+ * ------------------------------------------------------------------- */
+ @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+.form_container {
+    
+    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(50, 50, 93, 0.35) 0px 50px 100px -20px, rgba(0, 0, 0, 0.45) 0px 30px 60px -30px;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+    margin: 4em;
+}
+.input_container {
+    padding: 4em;
+    position: relative;
+}
+#input {
+    padding: 10px 30px;
+    background: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    font-size: 16px;
+    border-radius: 15px;
+    border: 2px solid #f48840;
+}
+
+.submit {
+    background: #f48840;
+    padding: 10px 30px;
+    color: #fff;
+    border: 2px solid #f48840;
+    font-size: 16px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom-left-radius: 20px;
+    position: absolute;
+    right: 2em;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.spooky_bg {
+    background: url(../images/squiddd.jpg);
+    background-size: cover;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    -webkit-clip-path: polygon(100% 0%, 99% 50%, 100% 100%, 23% 100%, 11% 51%, 0 0);
+    clip-path: polygon(100% 0%, 99% 50%, 100% 100%, 23% 100%, 11% 51%, 0 0);
+}
+.spooky_bg2 {
+    display: none;
+    background: url(../images/squiddd.jpg);
+    background-size: cover;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#error {
+    color: #35b7a4;
+}
+@media (max-width: 768px) {
+    .spooky_bg {
+        display: none;
+    }
+    .spooky_bg2 {
+        display: block !important;
+        height: 300px;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 84%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 84%, 0% 100%);
+    }
+}
+
+/* ------------------------------------------------------------------- 
+ * ## Share side bar
+ * ------------------------------------------------------------------- */
+ @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+
+.share-side-bar {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box
+}
+
+.share-side-bar nav {
+    position: fixed;
+    width: 30px;
+    transition: all 0.3s linear;
+    margin-top:20px;
+    z-index: 1;
+}
+
+.share-side-bar nav ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 10px;
+}
+
+.share-side-bar nav li {
+    height: 40px;
+  
+    position: relative;
+}
+
+.share-side-bar nav li a {
+  border: none;
+    color: #fff !important;
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 30px;
+    transition: all 0.75s linear;
+    text-decoration: none !important
+}
+
+.share-side-bar nav li a {
+    background: none;
+  
+}
+
+.share-side-bar nav li a i {
+    position: absolute;
+    top: 10px;
+    left: 24px;
+    font-size: 15px;
+  color: black
+}
+
+.share-side-bar ul li a span {
+    display: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase
+}
+
+.share-side-bar a:hover {
+    z-index: 1;
+    width: 200px;
+}
+
+.share-side-bar ul li:hover a span {
+    padding-left: 30%;
+    display: block;
+    font-size: 15px
+}
+.share-side-bar nav li a {
+  padding: 0px;
+  width: 50px;
+}
+
+
+.share-side-bar nav li i {
+  background:none;
+  width: 50%; 
+}
+
+.share-side-bar span {
+  color: blue;
+}
