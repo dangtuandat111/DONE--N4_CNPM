@@ -13,13 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// Trang chu
 Route::get('/home', function () {
     return view('main');
 });
 
-Route::match(['get','post'],'Login', ['as' => 'Login', 'uses' =>'LoginController@index']);
+// Dang nhap
+Route::match(['get','post'],'Login', ['as' => 'Login', 'uses' =>'LoginController@Login']);
+
+// Dang ki
+Route::match(['get','post'],'Register', ['as' => 'Register', 'uses' =>'LoginController@Register']);
+// Dang ki nhan thong bao qua mail
 Route::post('/RegistEmail', 'LoginController@sendMail');
+
+// Sau khi dang nhap
+Route::group(['middleware' => 'auth' ], function() {
+    Route::get('/Logout', 'LoginController@Logout');
+});

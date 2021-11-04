@@ -26,7 +26,8 @@
         <!-- Custom CSS Files -->
         <link rel="stylesheet" href="{{ asset('Blog_resources/css/mycss.css') }}" />
 
-
+        <!-- Icon File -->
+        <link rel="stylesheet" href="{{ asset('Blog_resources/fontawesome-free-6.0.0-beta2-web/css/all.min.css') }}" />
 
         @yield('Link')
 
@@ -75,12 +76,21 @@
                         <a class="nav-link" href="#">Blog Entries</a>
                     </li>
                     </li>
+                    @if(Auth::check())
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/Login') }}">Login</a>
+                        <a class="nav-link" href="{{ url('/Profile') }}" style = "color: #007bff;">
+                        {{ Auth::user()->LastName }}</a>
                     </li>
+                    
+                    <li class="nav-item" >
+                        <a class="nav-link" href="{{ url('/Logout') }}">Logout</a>
+                    </li>
+                    @endif
+                    @if(!(Auth::check()))
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
+                        <a class="nav-link" href="{{ url('/Login') }}">Login/Register</a>
                     </li>
+                    @endif
                 </ul>
             </div>
         </div>
@@ -240,14 +250,15 @@
     <script src="{{ asset('Blog_resources/js/myjs.js') }}"></script>
 
     <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
+        cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+        function clearField(t){                   //declaring the array outside of the
+        if(! cleared[t.id]){                      // function makes it static and global
+            cleared[t.id] = 1;  // you could use true and false, but that's more typing
+            t.value='';         // with more chance of typos
+            t.style.color='#fff';
+            }
+        }
+
     </script>
 
   </body>

@@ -6,7 +6,10 @@
   <title>Hệ thống hỗ trợ giảng dạy - Trang đăng nhập</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <!-- Icon File -->
+  <link rel="stylesheet" href="{{ asset('Blog_resources/fontawesome-free-6.0.0-beta2-web/css/all.min.css') }}" />
+  
+  <!-- CSS -->
   <style>
     
       @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
@@ -16,7 +19,7 @@
       }
 
       body {
-        background: #f6f5f7;
+        background: #f7f7f7;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -56,8 +59,8 @@
 
       button {
         border-radius: 20px;
-        border: 1px solid #FF4B2B;
-        background-color: #FF4B2B;
+        border: 1px solid #f48840;
+        background-color: #f48840;
         color: #FFFFFF;
         font-size: 12px;
         font-weight: bold;
@@ -170,9 +173,9 @@
       }
 
       .overlay {
-        background: #FF416C;
-        background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-        background: linear-gradient(to right, #FF4B2B, #FF416C);
+        background: #F48840;
+        background: -webkit-linear-gradient(to right, #fa761e, #fca972);
+        background: linear-gradient(to right, #fa761e, #fca972);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 0 0;
@@ -260,74 +263,123 @@
           color: #3c97bf;
           text-decoration: none;
       }
+
+      .alert {
+        padding: 20px;
+        background-color: #F44336;
+        color: white;
+        opacity: 1;
+        transition: opacity 0.6s;
+        margin-bottom: 15px;
+        font-size: 18px;
+        border-radius: 20px ;
+      }
+
+      .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 18px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .closebtn:hover {
+        color: black;
+      }
+
+      h1:nth-child(even) {
+        color: #f48840;
+      }
+      
+      .alert-success {
+        background-color: green;
+      }
+
   </style>
 
 </head>
 <body>
 
+@if(session('thongbao')) 
+  <div class="alert alert-success">
+    <span class="closebtn">&times;</span>  
+    <strong>Thông báo!</strong><br>
+    {{session('thongbao')}}
+  </div>
+@endif
+
 @if(count($errors) > 0) 
-  <div class="alert alert-danger alert-dismissible" role="alert">
-    <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-      <span class="sr-only">Close</span>
-    </button>
+  <div class="alert">
+    <span class="closebtn">&times;</span>  
+    <strong>Lỗi!</strong><br>
+    @foreach ($errors->all() as $error)
+      {{ $error }}
+    @endforeach
   </div>
 @endif
 
 <div class="container" id="container">
+  <!-- Sign in here -->
 	<div class="form-container sign-up-container">
-		<form action="#">
-			<h1>Create Account</h1>
+    <form method="post" action = "{{ url('/Register') }}">
+      <input type = "hidden" name = "_token" value = "{{ csrf_token() }}">
+			<h1>Đăng kí tài khoản</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
-			<span>or use your email for registration</span>
-			<input type="text" placeholder="Name" require/>
-			<input type="email" placeholder="Email" require/>
-			<input type="password" placeholder="Password" require/>
-			<button>Sign Up</button>
+			<span>hoặc đăng kí bằng Email</span>
+			<input type="text" placeholder="Nhập tên người dùng" name='Name' require/>
+			<input type="email" placeholder="Nhập địa chỉ Email" name='Email' require/>
+			<input type="password" placeholder="Nhập mật khẩu" name='Password' require/>
+      <input type="password" placeholder="Nhập lại mật khẩu" name='Re-Password'require/>
+			<button>Đăng ký</button>
 		</form>
 	</div>
+  <!-- Sign in End here -->
+
+  <!-- Login here -->
 	<div class="form-container sign-in-container">
 		<form method="post" action = "{{ url('/Login') }}">
       <input type = "hidden" name = "_token" value = "{{ csrf_token() }}">
-			<h1>Sign in</h1>
+			<h1>Đăng nhập</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook"></i></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
-			<span>or use your account</span>
+			<span>hoặc dùng Email</span>
 			<input type="email" placeholder="Email" name="Email"/>
 			<input type="password" placeholder="Password" name="Password"/>
-			<a href="#">Forgot your password?</a>
-			<button type="submit" >Sign In</button>
+			<a href="#">Quên mật khẩu</a>
+			<button type="submit" >Submit</button>
 		</form>
 	</div>
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signIn">Sign In</button>
+				<h1>Chào mừng bạn</h1>
+				<p>Hãy tiếp tục trải nghiệm với chúng tôi</p>
+				<button class="ghost" id="signIn">Đăng nhập</button>
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button class="ghost" id="signUp">Sign Up</button>
+				<h1>Chào bạn!</h1>
+				<p>Tham gia vào để cá nhân hóa và nâng cao trải nghiệm</p>
+				<button class="ghost" id="signUp">Đăng ký</button>
 			</div>
 		</div>
 	</div>
+  <!-- Login End here -->
 </div>
+
+
 </body>
 
+<!-- JS -->
 <script>
   const signUpButton = document.getElementById('signUp');
   const signInButton = document.getElementById('signIn');

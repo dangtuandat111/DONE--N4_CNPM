@@ -1,4 +1,5 @@
 @extends('master')
+
 @section('Main')
 <!-- Side-bar Here -->
 <div class = "share-side-bar">
@@ -108,82 +109,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="blog-post">
-                                <div class="blog-thumb">
-                                    <img src="{{ asset('Blog_resources/images/blog-post-03.jpg') }}" alt="" />
-                                </div>
-                                <div class="down-content">
-                                    <span>Photograph</span>
-                                    <a href="post-details.html"><h4>TODO: Tittle for Travel Photograph</h4></a>
-                                    <ul class="post-info">
-                                        <li><a href="#">TODO: Date</a></li>
-                                        <li><a href="#">TODO: Views</a></li>
-                                        <li><a href="#">TODO: Comments</a></li>
-                                    </ul>
-                                    <p>
-                                        Nullam at quam ut lacus aliquam tempor vel sed ipsum. Donec pellentesque tincidunt imperdiet. Mauris sit amet justo vulputate, cursus massa congue, vestibulum odio. Aenean elit nunc, gravida in erat
-                                        sit amet, feugiat viverra leo. Phasellus interdum, diam commodo egestas rhoncus, turpis nisi consectetur nibh, in vehicula eros orci vel neque.
-                                    </p>
-                                    <div class="post-options">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <ul class="post-tags">
-                                                    <li><i class="fa fa-tags"></i></li>
-                                                    <li><a href="#">HTML CSS</a>,</li>
-                                                    <li><a href="#">Photoshop</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6">
-                                                <ul class="post-share">
-                                                    <li><i class="fa fa-share-alt"></i></li>
-                                                    <li><a href="#">Facebook</a>,</li>
-                                                    <li><a href="#">Twitter</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="blog-post">
-                                <div class="blog-thumb">
-                                    <img src="{{ asset('Blog_resources/images/blog-post-03.jpg') }}" alt="" />
-                                </div>
-                                <div class="down-content">
-                                <span>Vehicle</span>
-                                    <a href="post-details.html"><h4>TODO: Tittle for Travel Vehicle</h4></a>
-                                    <ul class="post-info">
-                                        <li><a href="#">TODO: Date</a></li>
-                                        <li><a href="#">TODO: Views</a></li>
-                                        <li><a href="#">TODO: Comments</a></li>
-                                    </ul>
-                                    <p>
-                                        Nullam at quam ut lacus aliquam tempor vel sed ipsum. Donec pellentesque tincidunt imperdiet. Mauris sit amet justo vulputate, cursus massa congue, vestibulum odio. Aenean elit nunc, gravida in erat
-                                        sit amet, feugiat viverra leo. Phasellus interdum, diam commodo egestas rhoncus, turpis nisi consectetur nibh, in vehicula eros orci vel neque.
-                                    </p>
-                                    <div class="post-options">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <ul class="post-tags">
-                                                    <li><i class="fa fa-tags"></i></li>
-                                                    <li><a href="#">HTML CSS</a>,</li>
-                                                    <li><a href="#">Photoshop</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6">
-                                                <ul class="post-share">
-                                                    <li><i class="fa fa-share-alt"></i></li>
-                                                    <li><a href="#">Facebook</a>,</li>
-                                                    <li><a href="#">Twitter</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
@@ -265,87 +190,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="blog-post">
-                                <div class="blog-thumb">
-                                    <img src="{{ asset('Blog_resources/images/blog-post-03.jpg') }}" alt="" />
-                                </div>
-                                <div class="down-content">
-                                    <span>Photograph</span>
-                                    <a href="post-details.html"><h4>TODO: Tittle for Travel Photograph</h4></a>
-                                    <ul class="post-info">
-                                        <li><a href="#">TODO: Date</a></li>
-                                        <li><a href="#">TODO: Views</a></li>
-                                        <li><a href="#">TODO: Comments</a></li>
-                                    </ul>
-                                    <p>
-                                        Nullam at quam ut lacus aliquam tempor vel sed ipsum. Donec pellentesque tincidunt imperdiet. Mauris sit amet justo vulputate, cursus massa congue, vestibulum odio. Aenean elit nunc, gravida in erat
-                                        sit amet, feugiat viverra leo. Phasellus interdum, diam commodo egestas rhoncus, turpis nisi consectetur nibh, in vehicula eros orci vel neque.
-                                    </p>
-                                    <div class="post-options">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <ul class="post-tags">
-                                                    <li><i class="fa fa-tags"></i></li>
-                                                    <li><a href="#">HTML CSS</a>,</li>
-                                                    <li><a href="#">Photoshop</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6">
-                                                <ul class="post-share">
-                                                    <li><i class="fa fa-share-alt"></i></li>
-                                                    <li><a href="#">Facebook</a>,</li>
-                                                    <li><a href="#">Twitter</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="blog-post">
-                                <div class="blog-thumb">
-                                    <img src="{{ asset('Blog_resources/images/blog-post-03.jpg') }}" alt="" />
-                                </div>
-                                <div class="down-content">
-                                <span>Vehicle</span>
-                                    <a href="post-details.html"><h4>TODO: Tittle for Travel Vehicle</h4></a>
-                                    <ul class="post-info">
-                                        <li><a href="#">TODO: Date</a></li>
-                                        <li><a href="#">TODO: Views</a></li>
-                                        <li><a href="#">TODO: Comments</a></li>
-                                    </ul>
-                                    <p>
-                                        Nullam at quam ut lacus aliquam tempor vel sed ipsum. Donec pellentesque tincidunt imperdiet. Mauris sit amet justo vulputate, cursus massa congue, vestibulum odio. Aenean elit nunc, gravida in erat
-                                        sit amet, feugiat viverra leo. Phasellus interdum, diam commodo egestas rhoncus, turpis nisi consectetur nibh, in vehicula eros orci vel neque.
-                                    </p>
-                                    <div class="post-options">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <ul class="post-tags">
-                                                    <li><i class="fa fa-tags"></i></li>
-                                                    <li><a href="#">HTML CSS</a>,</li>
-                                                    <li><a href="#">Photoshop</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6">
-                                                <ul class="post-share">
-                                                    <li><i class="fa fa-share-alt"></i></li>
-                                                    <li><a href="#">Facebook</a>,</li>
-                                                    <li><a href="#">Twitter</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="main-button">
-                        <a href="blog.html">View All Posts</a>
+                        <a href="blog.html">View More Posts</a>
                     </div>
                 </div>
             </div>
@@ -379,13 +228,10 @@
                                 <ul>
                                 <li> FEATURED-POST </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/recipes/mains"> Mains </a>
+                                    <a href="https://www.thelondoner.me/featured/recipes/mains"> Food </a>
                                 </li>
                                 <li>
                                     <a href="https://www.thelondoner.me/featured/recipes"> Recipes </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.thelondoner.me/featured/recipes/snacks_starters"> Snacks n Starters </a>
                                 </li>
                                 </ul>
                             </div>
@@ -449,13 +295,10 @@
                                 <ul>
                                 <li> FEATURED-POST </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/recipes/mains"> Mains </a>
+                                    <a href="https://www.thelondoner.me/featured/recipes/mains"> Food </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/recipes"> Recipes </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.thelondoner.me/featured/recipes/snacks_starters"> Snacks n Starters </a>
+                                    <a href="https://www.thelondoner.me/featured/recipes"> Travel </a>
                                 </li>
                                 </ul>
                             </div>
@@ -509,66 +352,68 @@
                     </div>
                     <div class="col-md-4 col-xs-12 isotope-item">
                         <article class="article article-grid">
-                            <div class="article-image pipdig_lazy" style = "background-image: url('Blog_resources/images/blog-post-01.jpg');"></div>
+                            <div class="article-image pipdig_lazy" 
+                            style = "background-image: url('Blog_resources/images/blog-post-01.jpg');"></div>
                             <div class="article-body">
                             <div class="article-icon">
-                                <i class="ico-life"></i>
+                                <i class="ico-mains"></i>
                             </div>
                             <div class="article-category">
                                 <ul>
-                                <li> MINI-POST </li>
+                                <li> FEATURED-POST </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/life"> Life </a>
+                                    <a href="https://www.thelondoner.me/featured/recipes/mains"> Food </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/travel"> Travel </a>
+                                    <a href="https://www.thelondoner.me/featured/recipes"> Travel </a>
                                 </li>
                                 </ul>
                             </div>
                             <h2 class="article-title">
-                                <a href="https://www.thelondoner.me/2021/04/old-friends-new-places.html"> Old Friends, New Places </a>
+                                <a href="https://www.thelondoner.me/2021/04/super-simple-healthy-fried-chicken.html"> Super Simple Healthy Fried Chicken </a>
                             </h2>
                             <div class="article-meta">
                                 <ul>
-                                <li> 20th April 2021 </li>
+                                <li> 28th April 2021 </li>
                                 <li> Rosie </li>
                                 </ul>
                             </div>
                             <div class="article-actions">
-                                <a href="https://www.thelondoner.me/2021/04/old-friends-new-places.html" class="btn hvr-sweep-to-bottom">View Post </a>
+                                <a href="https://www.thelondoner.me/2021/04/super-simple-healthy-fried-chicken.html" class="btn hvr-sweep-to-bottom">View Post </a>
                             </div>
                             </div>
                         </article>
                     </div>
                     <div class="col-md-4 col-xs-12 isotope-item">
                         <article class="article article-grid">
-                            <div class="article-image pipdig_lazy" style = "background-image: url('Blog_resources/images/blog-post-01.jpg');"></div>
+                            <div class="article-image pipdig_lazy" 
+                            style = "background-image: url('Blog_resources/images/blog-post-01.jpg');"></div>
                             <div class="article-body">
                             <div class="article-icon">
-                                <i class="ico-life"></i>
+                                <i class="ico-mains"></i>
                             </div>
                             <div class="article-category">
                                 <ul>
-                                <li> MINI-POST </li>
+                                <li> FEATURED-POST </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/life"> Life </a>
+                                    <a href="https://www.thelondoner.me/featured/recipes/mains"> Food </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/travel"> Travel </a>
+                                    <a href="https://www.thelondoner.me/featured/recipes"> Travel </a>
                                 </li>
                                 </ul>
                             </div>
                             <h2 class="article-title">
-                                <a href="https://www.thelondoner.me/2021/04/old-friends-new-places.html"> Old Friends, New Places </a>
+                                <a href="https://www.thelondoner.me/2021/04/super-simple-healthy-fried-chicken.html"> Super Simple Healthy Fried Chicken </a>
                             </h2>
                             <div class="article-meta">
                                 <ul>
-                                <li> 20th April 2021 </li>
+                                <li> 28th April 2021 </li>
                                 <li> Rosie </li>
                                 </ul>
                             </div>
                             <div class="article-actions">
-                                <a href="https://www.thelondoner.me/2021/04/old-friends-new-places.html" class="btn hvr-sweep-to-bottom">View Post </a>
+                                <a href="https://www.thelondoner.me/2021/04/super-simple-healthy-fried-chicken.html" class="btn hvr-sweep-to-bottom">View Post </a>
                             </div>
                             </div>
                         </article>
@@ -582,7 +427,7 @@
 </div>
 <!-- Blog Posts End Here -->
 
-
+<!-- Email Regist Here -->
 <div class="wrapper">
 	<div class="container">
 		<div class="columns form_container">
@@ -610,5 +455,6 @@
 		</div>
 	</div>
 </div>
+<!-- Email Regist End Here -->
 
 @stop()
