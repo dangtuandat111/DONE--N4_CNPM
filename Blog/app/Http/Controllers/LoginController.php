@@ -52,8 +52,7 @@ class LoginController extends Controller
 	}
 
     public function sendMail() {
-        Mail::send('Email',[
-        ],function($message) {
+        Mail::send('Email',[],function($message) {
             $message->to('hkim661990@gmail.com','');
         });
 
