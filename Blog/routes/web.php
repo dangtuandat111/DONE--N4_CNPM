@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('main');
 });
+
+Route::match(['get','post'],'Login', ['as' => 'Login', 'uses' =>'LoginController@index']);
+Route::post('/RegistEmail', 'LoginController@sendMail');

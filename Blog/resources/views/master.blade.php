@@ -9,6 +9,12 @@
 
         <title>Stand CSS Blog by TemplateMo</title>
 
+        <!-- Arcticle Part -->
+        <link rel='stylesheet' id='fancybox2_se111o-css' href="{{ asset('Blog_resources/wp-content/themes/thelondoner_v3/vendor/hover-css/hover-min.css') }}" type='text/css' media='all' />
+        <link rel='stylesheet' id='fancybox2_se111o-css' href="{{ asset('Blog_resources/wp-content/themes/thelondoner_v3/css/style.css') }}" type='text/css' media='all' />
+        <link rel='stylesheet' id='flickity-css' href='https://cdnjs.cloudflare.com/ajax/libs/flickity/2.1.2/flickity.min.css' type='text/css' media='all' />
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js' id='jquery-js'></script>
+
         <!-- Bootstrap core CSS -->
         <link href="{{ asset('Blog_resources/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
 
@@ -19,7 +25,12 @@
 
         <!-- Custom CSS Files -->
         <link rel="stylesheet" href="{{ asset('Blog_resources/css/mycss.css') }}" />
+
+
+
         @yield('Link')
+
+       
     </head>
 </html>
   <body>
@@ -61,10 +72,14 @@
                         <a class="nav-link" href="#">Food</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Vehicle</a>
+                        <a class="nav-link" href="#">Blog Entries</a>
+                    </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Music</a>
+                        <a class="nav-link" href="{{ url('/Login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Register</a>
                     </li>
                 </ul>
             </div>
@@ -196,16 +211,15 @@
                     <li><a href="#">Dribbble</a></li>
                 </ul>
             </div>
-            <div class="col-lg-12">
-                <div class="copyright-text">
-                    <p>Copyright 2020 Stand Blog Co. | Design: <a rel="nofollow" href="https://templatemo.com" target="_parent">TemplateMo</a></p>
-                </div>
-            </div>
+            
         </div>
         </div>
     </footer>  
     <!-- Footer End Here -->
 
+    <!-- Modal here -->
+    
+    <!-- Modal End here -->
 
     <!-- Add script Here -->
     @yield('Script')
@@ -221,6 +235,9 @@
     <script src="{{ asset('Blog_resources/js/slick.js') }}"></script>
     <script src="{{ asset('Blog_resources/js/isotope.js') }}"></script>
     <script src="{{ asset('Blog_resources/js/accordions.js') }}"></script>
+
+    <!-- Custom JS Files -->
+    <script src="{{ asset('Blog_resources/js/myjs.js') }}"></script>
 
     <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field

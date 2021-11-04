@@ -1014,6 +1014,19 @@ footer p a:hover {
 	}
 }
 
+@media (max-width: 300px) {
+	span.psw {
+	   display: block;
+	   float: none;
+	}
+	.cancelbtn {
+	   width: 100%;
+	}
+	.modalLogin-content {
+		width: 300px;
+	}
+  }
+
 @media (max-width: 992px) {
 	.navbar .navbar-brand {
 		position: absolute;
