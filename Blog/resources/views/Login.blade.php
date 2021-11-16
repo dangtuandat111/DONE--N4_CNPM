@@ -326,18 +326,18 @@
 	<div class="form-container sign-up-container">
     <form method="post" action = "{{ url('/Register') }}">
       <input type = "hidden" name = "_token" value = "{{ csrf_token() }}">
-			<h1>Đăng kí tài khoản</h1>
+			<h1>Sign up</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
-			<span>hoặc đăng kí bằng Email</span>
+			<span>or sign up by email</span>
 			<input type="text" placeholder="Nhập tên người dùng" name='Name' require/>
 			<input type="email" placeholder="Nhập địa chỉ Email" name='Email' require/>
 			<input type="password" placeholder="Nhập mật khẩu" name='Password' require/>
       <input type="password" placeholder="Nhập lại mật khẩu" name='Re-Password'require/>
-			<button>Đăng ký</button>
+			<button>Sign Up</button>
 		</form>
 	</div>
   <!-- Sign in End here -->
@@ -346,30 +346,30 @@
 	<div class="form-container sign-in-container">
 		<form method="post" action = "{{ url('/Login') }}">
       <input type = "hidden" name = "_token" value = "{{ csrf_token() }}">
-			<h1>Đăng nhập</h1>
+			<h1>Sign In</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook"></i></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
-			<span>hoặc dùng Email</span>
+			<span>or use your Email</span>
 			<input type="email" placeholder="Email" name="Email"/>
 			<input type="password" placeholder="Password" name="Password"/>
-			<a href="#">Quên mật khẩu</a>
+			<a href="#">Forgot Password</a>
 			<button type="submit" >Submit</button>
 		</form>
 	</div>
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
-				<h1>Chào mừng bạn</h1>
-				<p>Hãy tiếp tục trải nghiệm với chúng tôi</p>
-				<button class="ghost" id="signIn">Đăng nhập</button>
+				<h1>Welcome</h1>
+				<p>Back to our to get more content</p>
+				<button class="ghost" id="signIn">Sign In</button>
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Chào bạn!</h1>
-				<p>Tham gia vào để cá nhân hóa và nâng cao trải nghiệm</p>
-				<button class="ghost" id="signUp">Đăng ký</button>
+				<h1>Hello!</h1>
+				<p>Join with us to find something you like</p>
+				<button class="ghost" id="signUp">Sign Up</button>
 			</div>
 		</div>
 	</div>

@@ -22,7 +22,8 @@
 }
 
 .owl-banner .item .item-content h4 {
-    color: #414345;
+    color: white;
+    text-shadow: 0.1em 0.1em 0.2rem #333;
 }
 
 .owl-banner .item .item-content ul li a {
@@ -253,4 +254,8 @@
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-  
+
+.spooky_bg2 {
+    background-image: none;
+    background-color: #f48840;
+}

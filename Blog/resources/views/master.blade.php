@@ -53,7 +53,7 @@
         <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="../public/home">
-                <h2>Blog<em>.</em><mark>STREET JUMP</mark></h2>
+                <h2>Blog<em>.</em><mark>CĐCN Phần mềm 12</mark></h2>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -61,19 +61,19 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="../public/">
                             HOME
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Travel</a>
+                        <a class="nav-link" href="../public/Category/Travel" name = "Travel" >Travel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Food</a>
+                        <a class="nav-link" href="../public/Category/Food">Food</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blog Entries</a>
+                        <a class="nav-link" href="../public/Category/Vehicle">Vehicle</a>
                     </li>
                     </li>
                     @if(Auth::check())
@@ -102,104 +102,49 @@
     <!-- Banner Starts Here -->
     <div class="main-banner header-text">
         <div class="container-fluid">
+
         <div class="owl-banner owl-carousel">
+            @foreach($banners as $banner) 
             <div class="item">
-                <img src="{{ asset('Blog_resources/images/banner-item-01.jpg') }}" alt="" />
+                <img src="{{ asset('Blog_resources/images/assets/images/thumbnail/'.$banner->Thumbnail) }}" alt="" />
+
                 <div class="item-content">
                     <div class="main-content">
                         <div class="meta-category">
-                            <span>TODO: Travel</span>
+                            <span>
+                            @foreach($cats as $cat) 
+                                @if ($cat->id == $banner[->Id_Category)
+                                    <?php  echo 'Category:'.$cat->Title ;?>
+                                @endif
+                            @endforeach
+                            </span>
                         </div>
-                        <a href="post-details.html"><h4>TODO: Name Post</h4></a>
+                        <a href="post-details.html"><h4>
+                            <?php  echo 'Posts name:'.$banner->Title ;?>
+                        </h4></a>
                         <ul class="post-info">
-                            <li><a href="#">TODO: Date</a></li>
-                            <li><a href="#">TODO: Views</a></li>
-                            <li><a href="#">TODO: Comments</a></li>
+                            <li><a href="#">
+                                <?php  echo 'Date: '.\Carbon\Carbon::parse($banner->Created_at)->format('d/m/Y') ;?>   
+                            </a></li>
+                            <li><a href="#">
+                                <?php  echo 'Views: '.$banner->views ;?>   
+                            </a></li>
+                            <li><a href="#">
+                            @foreach($cmts as $cmt) 
+                                @if($cmt[0] == $banner->Id_Category) 
+                                    <?php  echo 'Comments:'.$cmt[1];?>
+                                
+                                @endif
+                            
+                            @endforeach
+                            </a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <img src="{{ asset('Blog_resources/images/banner-item-02.jpg') }}" alt="" />
-                <div class="item-content">
-                    <div class="main-content">
-                    <div class="meta-category">
-                            <span>TODO: Food</span>
-                        </div>
-                        <a href="post-details.html"><h4>TODO: Name Post</h4></a>
-                        <ul class="post-info">
-                            <li><a href="#">TODO: Date</a></li>
-                            <li><a href="#">TODO: Views</a></li>
-                            <li><a href="#">TODO: Comments</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="{{ asset('Blog_resources/images/banner-item-03.jpg') }}" alt="" />
-                <div class="item-content">
-                    <div class="main-content">
-                        <div class="meta-category">
-                            <span>TODO: Photograph</span>
-                        </div>
-                        <a href="post-details.html"><h4>TODO: Name Post</h4></a>
-                        <ul class="post-info">
-                            <li><a href="#">TODO: Date</a></li>
-                            <li><a href="#">TODO: Views</a></li>
-                            <li><a href="#">TODO: Comments</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="{{ asset('Blog_resources/images/banner-item-04.jpg') }}" alt="" />
-                <div class="item-content">
-                    <div class="main-content">
-                        <div class="meta-category">
-                            <span>TODO: Vehicle</span>
-                        </div>
-                        <a href="post-details.html"><h4>TODO: Name Post</h4></a>
-                        <ul class="post-info">
-                            <li><a href="#">TODO: Date</a></li>
-                            <li><a href="#">TODO: Views</a></li>
-                            <li><a href="#">TODO: Comments</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="{{ asset('Blog_resources/images/banner-item-05.jpg') }}" alt="" />
-                <div class="item-content">
-                    <div class="main-content">
-                    <div class="meta-category">
-                            <span>TODO: Music</span>
-                        </div>
-                        <a href="post-details.html"><h4>TODO: Name Post</h4></a>
-                        <ul class="post-info">
-                            <li><a href="#">TODO: Date</a></li>
-                            <li><a href="#">TODO: Views</a></li>
-                            <li><a href="#">TODO: Comments</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img src="{{ asset('Blog_resources/images/banner-item-06.jpg') }}" alt="" />
-                <div class="item-content">
-                    <div class="main-content">
-                        <div class="meta-category">
-                            <span>TODO: Cat</span>
-                        </div>
-                        <a href="post-details.html"><h4>TODO: Name Post</h4></a>
-                        <ul class="post-info">
-                            <li><a href="#">TODO: Date</a></li>
-                            <li><a href="#">TODO: Views</a></li>
-                            <li><a href="#">TODO: Comments</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
+
         </div>
     </div>
     <!-- Banner Ends Here -->

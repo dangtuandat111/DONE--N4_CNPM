@@ -30,6 +30,8 @@
             <div class="col-lg-12">
                 <div class="all-blog-posts">
                     <div class="row">
+                        @foreach($recent_posts as $recent_post)
+                        @endforeach()
                         <div class="col-lg-6">
                             <div class="blog-post">
                                 <div class="blog-thumb">
@@ -109,6 +111,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
@@ -192,11 +195,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12">
+                <!-- <div class="col-lg-12">
                     <div class="main-button">
                         <a href="blog.html">View More Posts</a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -228,15 +231,15 @@
                                 <ul>
                                 <li> FEATURED-POST </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/recipes/mains"> Food </a>
+                                    <a href="#"> Food </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/recipes"> Recipes </a>
+                                    <a href="#"> Recipes </a>
                                 </li>
                                 </ul>
                             </div>
                             <h2 class="article-title">
-                                <a href="https://www.thelondoner.me/2021/04/super-simple-healthy-fried-chicken.html"> Super Simple Healthy Fried Chicken </a>
+                                <a href="#"> Super Simple Healthy Fried Chicken </a>
                             </h2>
                             <div class="article-meta">
                                 <ul>
@@ -245,7 +248,7 @@
                                 </ul>
                             </div>
                             <div class="article-actions">
-                                <a href="https://www.thelondoner.me/2021/04/super-simple-healthy-fried-chicken.html" class="btn hvr-sweep-to-bottom">View Post </a>
+                                <a href="#" class="btn hvr-sweep-to-bottom">View Post </a>
                             </div>
                             </div>
                         </article>
@@ -261,15 +264,15 @@
                                 <ul>
                                 <li> MINI-POST </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/life"> Life </a>
+                                    <a href="#"> Life </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/travel"> Travel </a>
+                                    <a href="#"> Travel </a>
                                 </li>
                                 </ul>
                             </div>
                             <h2 class="article-title">
-                                <a href="https://www.thelondoner.me/2021/04/old-friends-new-places.html"> Old Friends, New Places </a>
+                                <a href="#"> Old Friends, New Places </a>
                             </h2>
                             <div class="article-meta">
                                 <ul>
@@ -278,7 +281,7 @@
                                 </ul>
                             </div>
                             <div class="article-actions">
-                                <a href="https://www.thelondoner.me/2021/04/old-friends-new-places.html" class="btn hvr-sweep-to-bottom">View Post </a>
+                                <a href="#" class="btn hvr-sweep-to-bottom">View Post </a>
                             </div>
                             </div>
                         </article>
@@ -295,15 +298,15 @@
                                 <ul>
                                 <li> FEATURED-POST </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/recipes/mains"> Food </a>
+                                    <a href="#"> Food </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/recipes"> Travel </a>
+                                    <a href="#"> Travel </a>
                                 </li>
                                 </ul>
                             </div>
                             <h2 class="article-title">
-                                <a href="https://www.thelondoner.me/2021/04/super-simple-healthy-fried-chicken.html"> Super Simple Healthy Fried Chicken </a>
+                                <a href="#"> Super Simple Healthy Fried Chicken </a>
                             </h2>
                             <div class="article-meta">
                                 <ul>
@@ -312,7 +315,7 @@
                                 </ul>
                             </div>
                             <div class="article-actions">
-                                <a href="https://www.thelondoner.me/2021/04/super-simple-healthy-fried-chicken.html" class="btn hvr-sweep-to-bottom">View Post </a>
+                                <a href="#" class="btn hvr-sweep-to-bottom">View Post </a>
                             </div>
                             </div>
                         </article>
@@ -328,15 +331,15 @@
                                 <ul>
                                 <li> MINI-POST </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/life"> Life </a>
+                                    <a href="#"> Life </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/travel"> Travel </a>
+                                    <a href="#"> Travel </a>
                                 </li>
                                 </ul>
                             </div>
                             <h2 class="article-title">
-                                <a href="https://www.thelondoner.me/2021/04/old-friends-new-places.html"> Old Friends, New Places </a>
+                                <a href="#"> Old Friends, New Places </a>
                             </h2>
                             <div class="article-meta">
                                 <ul>
@@ -345,7 +348,7 @@
                                 </ul>
                             </div>
                             <div class="article-actions">
-                                <a href="https://www.thelondoner.me/2021/04/old-friends-new-places.html" class="btn hvr-sweep-to-bottom">View Post </a>
+                                <a href="#" class="btn hvr-sweep-to-bottom">View Post </a>
                             </div>
                             </div>
                         </article>
@@ -362,15 +365,15 @@
                                 <ul>
                                 <li> FEATURED-POST </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/recipes/mains"> Food </a>
+                                    <a href="#"> Food </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/recipes"> Travel </a>
+                                    <a href="#"> Travel </a>
                                 </li>
                                 </ul>
                             </div>
                             <h2 class="article-title">
-                                <a href="https://www.thelondoner.me/2021/04/super-simple-healthy-fried-chicken.html"> Super Simple Healthy Fried Chicken </a>
+                                <a href="#"> Super Simple Healthy Fried Chicken </a>
                             </h2>
                             <div class="article-meta">
                                 <ul>
@@ -379,7 +382,7 @@
                                 </ul>
                             </div>
                             <div class="article-actions">
-                                <a href="https://www.thelondoner.me/2021/04/super-simple-healthy-fried-chicken.html" class="btn hvr-sweep-to-bottom">View Post </a>
+                                <a href="#" class="btn hvr-sweep-to-bottom">View Post </a>
                             </div>
                             </div>
                         </article>
@@ -396,15 +399,15 @@
                                 <ul>
                                 <li> FEATURED-POST </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/recipes/mains"> Food </a>
+                                    <a href="#"> Food </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.thelondoner.me/featured/recipes"> Travel </a>
+                                    <a href="#"> Travel </a>
                                 </li>
                                 </ul>
                             </div>
                             <h2 class="article-title">
-                                <a href="https://www.thelondoner.me/2021/04/super-simple-healthy-fried-chicken.html"> Super Simple Healthy Fried Chicken </a>
+                                <a href="#"> Super Simple Healthy Fried Chicken </a>
                             </h2>
                             <div class="article-meta">
                                 <ul>
@@ -413,7 +416,7 @@
                                 </ul>
                             </div>
                             <div class="article-actions">
-                                <a href="https://www.thelondoner.me/2021/04/super-simple-healthy-fried-chicken.html" class="btn hvr-sweep-to-bottom">View Post </a>
+                                <a href="#" class="btn hvr-sweep-to-bottom">View Post </a>
                             </div>
                             </div>
                         </article>
@@ -437,8 +440,8 @@
                  <div class="subscribe-icon">
                     <i class="ico-mailbox"></i>
                 </div>
-				<h1 class="title is-1 has-text-black">Đăng kí để nhận bài viết mới</h1>
-				<p class="has-text-black">*Tài khoản email được cung cấp chỉ phục vụ mục đích gửi thông báo bài viết. </p>
+				<h1 class="title is-1 has-text-black">Subcribe for more Post</h1>
+				<p class="has-text-black">*We've just use your Email to send notification only. </p>
 				<div class="mt-5">
                     <form method="post" action = "{{ url('/RegistEmail') }}">
                         <input type = "hidden" name = "_token" value = "{{ csrf_token() }}">

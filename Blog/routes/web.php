@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Trang chu
-Route::get('/home', function () {
-    return view('main');
-});
+Route::get('/', 'HomeController@index');
+
+Route::get('/home', 'HomeController@index');
 
 // Dang nhap
 Route::match(['get','post'],'Login', ['as' => 'Login', 'uses' =>'LoginController@Login']);
@@ -30,3 +30,6 @@ Route::post('/RegistEmail', 'LoginController@sendMail');
 Route::group(['middleware' => 'auth' ], function() {
     Route::get('/Logout', 'LoginController@Logout');
 });
+
+// Lay bai viet thuoc cat
+Route::get('/Category', 'CatController@getPost');
