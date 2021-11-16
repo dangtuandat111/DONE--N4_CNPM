@@ -21,6 +21,10 @@ class HomeController extends Controller
         }
 
         $recent_posts =  DB::table('posts')->limit(4)->orderBy('Created_at')->get();
+        foreach($recent_posts as $recent_post) {
+            print($recent_post->Id_Category);
+        }
+        //dd($recent_posts);
         return view('main', ['banners' => $banners, 'cats' => $cats , 'cmts' => $cmts , 'recent_posts' => $recent_posts,
                     ]);
     }

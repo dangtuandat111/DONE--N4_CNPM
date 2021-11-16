@@ -31,168 +31,60 @@
                 <div class="all-blog-posts">
                     <div class="row">
                         @foreach($recent_posts as $recent_post)
+                        <div class="col-lg-6">
+                            <div class="blog-post">
+                                <div class="blog-thumb">
+                                    <img src="{{ asset('Blog_resources/images/blog-post-01.jpg') }}" alt="" />
+                                </div>
+                                <div class="down-content">
+                                    <span>
+                                    @foreach($cats as $cat) 
+                                        @if ($cat->id == $recent_post->Id_Category)
+                                            <?php  echo 'Category:'.$cat->Title ;?>
+                                        @endif
+                                    @endforeach
+                                    </span>
+                                    <a href="post-details.html"><h4><?php  echo 'Posts name:'.$recent_post->Title ;?></h4></a>
+                                    <ul class="post-info">
+                                        <li><a href="#">
+                                            <?php  echo 'Date: '.\Carbon\Carbon::parse($recent_post->Created_at)->format('d/m/Y') ;?>
+                                        </a></li>
+                                        <li><a href="#">
+                                            <?php  echo 'Views: '.$recent_post->views ;?>
+                                        </a></li>
+                                        <li><a href="#">
+                                        @foreach($cmts as $cmt) 
+                                            @if($cmt[0] == $recent_post->Id_Category) 
+                                                <?php  echo 'Comments:'.$cmt[1];?>
+                                            
+                                            @endif
+                                        
+                                        @endforeach
+                                        </a></li>
+                                    </ul>
+                                    <p>
+                                        <?php  echo 'Summary:<br> '.$recent_post->Summary ;?>
+                                    </p>
+                                    <div class="post-options">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <ul class="post-tags">
+                                                    <li><i class="fa fa-tags"></i></li>
+                                                    <li><a href="#"><?php  echo 'Views: '.$recent_post->views ;?></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-6">
+                                                <ul class="post-share">
+                                                    <li><i class="fa fa-share-alt"></i></li>
+                                                    <li><a href="#">Facebook</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         @endforeach()
-                        <div class="col-lg-6">
-                            <div class="blog-post">
-                                <div class="blog-thumb">
-                                    <img src="{{ asset('Blog_resources/images/blog-post-01.jpg') }}" alt="" />
-                                </div>
-                                <div class="down-content">
-                                    <span>TRAVEL</span>
-                                    <a href="post-details.html"><h4>TODO: Tittle for Travel Blog</h4></a>
-                                    <ul class="post-info">
-                                        <li><a href="#">TODO: Date</a></li>
-                                        <li><a href="#">TODO: Views</a></li>
-                                        <li><a href="#">TODO: Comments</a></li>
-                                    </ul>
-                                    <p>
-                                        Stand Blog is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed
-                                        to re-distribute the template ZIP file on any template collection site for the download purpose. <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">Contact TemplateMo</a> for
-                                        more info. Thank you.
-                                    </p>
-                                    <div class="post-options">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <ul class="post-tags">
-                                                    <li><i class="fa fa-tags"></i></li>
-                                                    <li><a href="#">Tags1</a>,</li>
-                                                    <li><a href="#">Tags2</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6">
-                                                <ul class="post-share">
-                                                    <li><i class="fa fa-share-alt"></i></li>
-                                                    <li><a href="#">Facebook</a>,</li>
-                                                    <li><a href="#">Twitter</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="blog-post">
-                                <div class="blog-thumb">
-                                    <img src="{{ asset('Blog_resources/images/blog-post-02.jpg') }}" alt="" />
-                                </div>
-                                <div class="down-content">
-                                    <span>Food</span>
-                                    <a href="post-details.html"><h4>TODO: Tittle for Travel Food</h4></a>
-                                    <ul class="post-info">
-                                        <li><a href="#">TODO: Date</a></li>
-                                        <li><a href="#">TODO: Views</a></li>
-                                        <li><a href="#">TODO: Comments</a></li>
-                                    </ul>
-                                    <p>
-                                        You can support us by contributing a little via PayPal. Please contact <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">TemplateMo</a> via Live Chat or Email. If you have any
-                                        question or feedback about this template, feel free to talk to us. Also, you may check other CSS templates such as
-                                        <a rel="nofollow" href="https://templatemo.com/tag/multi-page" target="_parent">multi-page</a>, <a rel="nofollow" href="https://templatemo.com/tag/resume" target="_parent">resume</a>,
-                                        <a rel="nofollow" href="https://templatemo.com/tag/video" target="_parent">video</a>, etc.
-                                    </p>
-                                    <div class="post-options">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <ul class="post-tags">
-                                                    <li><i class="fa fa-tags"></i></li>
-                                                    <li><a href="#">Best Templates</a>,</li>
-                                                    <li><a href="#">TemplateMo</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6">
-                                                <ul class="post-share">
-                                                    <li><i class="fa fa-share-alt"></i></li>
-                                                    <li><a href="#">Facebook</a>,</li>
-                                                    <li><a href="#">Twitter</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="blog-post">
-                                <div class="blog-thumb">
-                                    <img src="{{ asset('Blog_resources/images/blog-post-01.jpg') }}" alt="" />
-                                </div>
-                                <div class="down-content">
-                                    <span>TRAVEL</span>
-                                    <a href="post-details.html"><h4>TODO: Tittle for Travel Blog</h4></a>
-                                    <ul class="post-info">
-                                        <li><a href="#">TODO: Date</a></li>
-                                        <li><a href="#">TODO: Views</a></li>
-                                        <li><a href="#">TODO: Comments</a></li>
-                                    </ul>
-                                    <p>
-                                        Stand Blog is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed
-                                        to re-distribute the template ZIP file on any template collection site for the download purpose. <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">Contact TemplateMo</a> for
-                                        more info. Thank you.
-                                    </p>
-                                    <div class="post-options">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <ul class="post-tags">
-                                                    <li><i class="fa fa-tags"></i></li>
-                                                    <li><a href="#">Tags1</a>,</li>
-                                                    <li><a href="#">Tags2</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6">
-                                                <ul class="post-share">
-                                                    <li><i class="fa fa-share-alt"></i></li>
-                                                    <li><a href="#">Facebook</a>,</li>
-                                                    <li><a href="#">Twitter</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="blog-post">
-                                <div class="blog-thumb">
-                                    <img src="{{ asset('Blog_resources/images/blog-post-02.jpg') }}" alt="" />
-                                </div>
-                                <div class="down-content">
-                                    <span>Food</span>
-                                    <a href="post-details.html"><h4>TODO: Tittle for Travel Food</h4></a>
-                                    <ul class="post-info">
-                                        <li><a href="#">TODO: Date</a></li>
-                                        <li><a href="#">TODO: Views</a></li>
-                                        <li><a href="#">TODO: Comments</a></li>
-                                    </ul>
-                                    <p>
-                                        You can support us by contributing a little via PayPal. Please contact <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">TemplateMo</a> via Live Chat or Email. If you have any
-                                        question or feedback about this template, feel free to talk to us. Also, you may check other CSS templates such as
-                                        <a rel="nofollow" href="https://templatemo.com/tag/multi-page" target="_parent">multi-page</a>, <a rel="nofollow" href="https://templatemo.com/tag/resume" target="_parent">resume</a>,
-                                        <a rel="nofollow" href="https://templatemo.com/tag/video" target="_parent">video</a>, etc.
-                                    </p>
-                                    <div class="post-options">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <ul class="post-tags">
-                                                    <li><i class="fa fa-tags"></i></li>
-                                                    <li><a href="#">Best Templates</a>,</li>
-                                                    <li><a href="#">TemplateMo</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6">
-                                                <ul class="post-share">
-                                                    <li><i class="fa fa-share-alt"></i></li>
-                                                    <li><a href="#">Facebook</a>,</li>
-                                                    <li><a href="#">Twitter</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <!-- <div class="col-lg-12">

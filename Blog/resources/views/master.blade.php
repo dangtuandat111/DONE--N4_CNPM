@@ -113,7 +113,7 @@
                         <div class="meta-category">
                             <span>
                             @foreach($cats as $cat) 
-                                @if ($cat->id == $banner[->Id_Category)
+                                @if ($cat->id == $banner->Id_Category)
                                     <?php  echo 'Category:'.$cat->Title ;?>
                                 @endif
                             @endforeach

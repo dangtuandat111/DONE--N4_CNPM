@@ -9,6 +9,20 @@
     justify-content: center;
 }
 
+.blog-posts .down-content {
+    padding: 40px;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+
+}
+
+.blog-posts .blog-thumb img {
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+}
+
 .blog-posts .down-content p {
     height: 230px;
 }
