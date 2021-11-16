@@ -32,4 +32,4 @@ Route::group(['middleware' => 'auth' ], function() {
 });
 
 // Lay bai viet thuoc cat
-Route::get('/Category', 'CatController@getPost');
+Route::get('/Category/Travel', 'CatController@getPost');

@@ -34,7 +34,7 @@
                         <div class="col-lg-6">
                             <div class="blog-post">
                                 <div class="blog-thumb">
-                                    <img src="{{ asset('Blog_resources/images/blog-post-01.jpg') }}" alt="" />
+                                    <img src="{{ asset('Blog_resources/images/assets/images/thumbnail/'.$recent_post->Thumbnail) }}" alt="" />
                                 </div>
                                 <div class="down-content">
                                     <span>
@@ -70,7 +70,13 @@
                                             <div class="col-6">
                                                 <ul class="post-tags">
                                                     <li><i class="fa fa-tags"></i></li>
-                                                    <li><a href="#"><?php  echo 'Views: '.$recent_post->views ;?></a></li>
+                                                    <li><a href="#">
+                                                    @foreach($tags as $tag) 
+                                                        @if ($tag[0] == $recent_post->Id_Tag)
+                                                            <?php  echo 'Tags:'.$tag[1] ;?>
+                                                        @endif
+                                                    @endforeach
+                                                    </a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-6">
@@ -111,6 +117,45 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row isotope">
+                    @foreach($popular_posts as $popular_post)
+                    <div class="col-md-4 col-xs-12 isotope-item">
+                        <article class="article article-grid">
+                            <div class="article-image pipdig_lazy" 
+                            style = "background-image: url('<?php echo 'Blog_resources/images/assets/images/thumbnail/'.$popular_post->Thumbnail?>'); "></div>
+                            <div class="article-body">
+                            <div class="article-icon">
+                                <i class="ico-travel"></i>
+                            </div>
+                            <div class="article-category">
+                                <ul>
+                                    <li> CATEGORI </li>
+                                    <li>
+                                        <a href="#"> 
+                                        @foreach($cats as $cat) 
+                                            @if ($cat->id == $popular_post->Id_Category)
+                                                <?php  echo $cat->Title ;?>
+                                            @endif
+                                        @endforeach
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <h2 class="article-title">
+                                <a href="#"> <?php  echo $popular_post->Title ;?> </a>
+                            </h2>
+                            <div class="article-meta">
+                                <ul>
+                                <li> <?php  echo \Carbon\Carbon::parse($popular_post->Created_at)->format('j-F-Y') ;?> </li>
+                                <li> Rosie </li>
+                                </ul>
+                            </div>
+                            <div class="article-actions">
+                                <a href="#" class="btn hvr-sweep-to-bottom">View Post </a>
+                            </div>
+                            </div>
+                        </article>
+                    </div>
+                    @endforeach()
                     <div class="col-md-4 col-xs-12 isotope-item">
                         <article class="article article-grid">
                             <div class="article-image pipdig_lazy" 
