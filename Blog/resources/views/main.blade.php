@@ -1,6 +1,26 @@
 @extends('master')
 
 @section('Main')
+
+<!-- Message here -->
+@if(session('thongbao')) 
+  <div class="alert alert-success " id = "alert" onmouseover="HideMess();">
+    <span class="closebtn" id>&times;</span>  
+    <strong>Thông báo!</strong><br>
+    {{session('thongbao')}}
+  </div>
+@endif
+
+@if(count($errors) > 0) 
+  <div class="alert alert-danger" id = "alert" onmouseover="HideMess();">  
+    <strong>Lỗi!</strong><br>
+    @foreach ($errors->all() as $error)
+      {{ $error }}
+    @endforeach
+  </div>
+@endif
+<!-- End Message here -->
+
 <!-- Side-bar Here -->
 <div class = "share-side-bar">
     <nav>
@@ -156,208 +176,7 @@
                         </article>
                     </div>
                     @endforeach()
-                    <div class="col-md-4 col-xs-12 isotope-item">
-                        <article class="article article-grid">
-                            <div class="article-image pipdig_lazy" 
-                            style = "background-image: url('Blog_resources/images/blog-post-01.jpg');"></div>
-                            <div class="article-body">
-                            <div class="article-icon">
-                                <i class="ico-mains"></i>
-                            </div>
-                            <div class="article-category">
-                                <ul>
-                                <li> FEATURED-POST </li>
-                                <li>
-                                    <a href="#"> Food </a>
-                                </li>
-                                <li>
-                                    <a href="#"> Recipes </a>
-                                </li>
-                                </ul>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="#"> Super Simple Healthy Fried Chicken </a>
-                            </h2>
-                            <div class="article-meta">
-                                <ul>
-                                <li> 28th April 2021 </li>
-                                <li> Rosie </li>
-                                </ul>
-                            </div>
-                            <div class="article-actions">
-                                <a href="#" class="btn hvr-sweep-to-bottom">View Post </a>
-                            </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-4 col-xs-12 isotope-item">
-                        <article class="article article-grid">
-                            <div class="article-image pipdig_lazy" style = "background-image: url('Blog_resources/images/blog-post-01.jpg');"></div>
-                            <div class="article-body">
-                            <div class="article-icon">
-                                <i class="ico-life"></i>
-                            </div>
-                            <div class="article-category">
-                                <ul>
-                                <li> MINI-POST </li>
-                                <li>
-                                    <a href="#"> Life </a>
-                                </li>
-                                <li>
-                                    <a href="#"> Travel </a>
-                                </li>
-                                </ul>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="#"> Old Friends, New Places </a>
-                            </h2>
-                            <div class="article-meta">
-                                <ul>
-                                <li> 20th April 2021 </li>
-                                <li> Rosie </li>
-                                </ul>
-                            </div>
-                            <div class="article-actions">
-                                <a href="#" class="btn hvr-sweep-to-bottom">View Post </a>
-                            </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-4 col-xs-12 isotope-item">
-                        <article class="article article-grid">
-                            <div class="article-image pipdig_lazy" 
-                            style = "background-image: url('Blog_resources/images/blog-post-01.jpg');"></div>
-                            <div class="article-body">
-                            <div class="article-icon">
-                                <i class="ico-mains"></i>
-                            </div>
-                            <div class="article-category">
-                                <ul>
-                                <li> FEATURED-POST </li>
-                                <li>
-                                    <a href="#"> Food </a>
-                                </li>
-                                <li>
-                                    <a href="#"> Travel </a>
-                                </li>
-                                </ul>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="#"> Super Simple Healthy Fried Chicken </a>
-                            </h2>
-                            <div class="article-meta">
-                                <ul>
-                                <li> 28th April 2021 </li>
-                                <li> Rosie </li>
-                                </ul>
-                            </div>
-                            <div class="article-actions">
-                                <a href="#" class="btn hvr-sweep-to-bottom">View Post </a>
-                            </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-4 col-xs-12 isotope-item">
-                        <article class="article article-grid">
-                            <div class="article-image pipdig_lazy" style = "background-image: url('Blog_resources/images/blog-post-01.jpg');"></div>
-                            <div class="article-body">
-                            <div class="article-icon">
-                                <i class="ico-life"></i>
-                            </div>
-                            <div class="article-category">
-                                <ul>
-                                <li> MINI-POST </li>
-                                <li>
-                                    <a href="#"> Life </a>
-                                </li>
-                                <li>
-                                    <a href="#"> Travel </a>
-                                </li>
-                                </ul>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="#"> Old Friends, New Places </a>
-                            </h2>
-                            <div class="article-meta">
-                                <ul>
-                                <li> 20th April 2021 </li>
-                                <li> Rosie </li>
-                                </ul>
-                            </div>
-                            <div class="article-actions">
-                                <a href="#" class="btn hvr-sweep-to-bottom">View Post </a>
-                            </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-4 col-xs-12 isotope-item">
-                        <article class="article article-grid">
-                            <div class="article-image pipdig_lazy" 
-                            style = "background-image: url('Blog_resources/images/blog-post-01.jpg');"></div>
-                            <div class="article-body">
-                            <div class="article-icon">
-                                <i class="ico-mains"></i>
-                            </div>
-                            <div class="article-category">
-                                <ul>
-                                <li> FEATURED-POST </li>
-                                <li>
-                                    <a href="#"> Food </a>
-                                </li>
-                                <li>
-                                    <a href="#"> Travel </a>
-                                </li>
-                                </ul>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="#"> Super Simple Healthy Fried Chicken </a>
-                            </h2>
-                            <div class="article-meta">
-                                <ul>
-                                <li> 28th April 2021 </li>
-                                <li> Rosie </li>
-                                </ul>
-                            </div>
-                            <div class="article-actions">
-                                <a href="#" class="btn hvr-sweep-to-bottom">View Post </a>
-                            </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-4 col-xs-12 isotope-item">
-                        <article class="article article-grid">
-                            <div class="article-image pipdig_lazy" 
-                            style = "background-image: url('Blog_resources/images/blog-post-01.jpg');"></div>
-                            <div class="article-body">
-                            <div class="article-icon">
-                                <i class="ico-mains"></i>
-                            </div>
-                            <div class="article-category">
-                                <ul>
-                                <li> FEATURED-POST </li>
-                                <li>
-                                    <a href="#"> Food </a>
-                                </li>
-                                <li>
-                                    <a href="#"> Travel </a>
-                                </li>
-                                </ul>
-                            </div>
-                            <h2 class="article-title">
-                                <a href="#"> Super Simple Healthy Fried Chicken </a>
-                            </h2>
-                            <div class="article-meta">
-                                <ul>
-                                <li> 28th April 2021 </li>
-                                <li> Rosie </li>
-                                </ul>
-                            </div>
-                            <div class="article-actions">
-                                <a href="#" class="btn hvr-sweep-to-bottom">View Post </a>
-                            </div>
-                            </div>
-                        </article>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -382,12 +201,9 @@
 				<div class="mt-5">
                     <form method="post" action = "{{ url('/RegistEmail') }}">
                         <input type = "hidden" name = "_token" value = "{{ csrf_token() }}">
-                        <input type="text" name="" placeholder="Enter your Email" id="input"  >
-                        <input type="submit" name="" value="SUBCRIBE" class="submit" >
+                        <input type="text" name="Email" placeholder="Enter your Email" id="inputEmail" required >
+                        <input type="submit"  value="SUBCRIBE" class="submit" id= "submit">
                     </form>
-				</div>
-				<div class="mt-2 ml-2">
-					<span id="error"></span>
 				</div>
 			</div>
 			<div class="column is-half spooky_bg">
@@ -396,5 +212,14 @@
 	</div>
 </div>
 <!-- Email Regist End Here -->
+@endsection
+
+@section('Script')
+<script>
+    function HideMess() {
+        $('#alert').fadeOut(1500);
+    }
+        
+</script>
 
 @stop()

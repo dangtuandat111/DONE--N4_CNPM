@@ -48,20 +48,45 @@ class LoginController extends Controller
 	}
 
     // Gui mail
-    public function sendMail() {
-        Mail::send('Email',[],function($message) {
-            $message->to('hkim661990@gmail.com','');
-        });
-
-        if( count(Mail::failures()) > 0) {
-            $error = '';
-
-            foreach(Mail::failures() as $email_address) {
-               $error = $error." - ".$email_address." <br />";
+    public function sendMail(Request $request) {
+        
+        if($this->checkSendMail($request->request) == 'Success') {
+            $mail = $request->Email;
+            Mail::send('Email',[$mail],function($message) use ($mail) {
+                $message->to($mail,'');
+            });
+    
+            if( count(Mail::failures()) > 0) {
+                $error = '';
+    
+                foreach(Mail::failures() as $email_address) {
+                   $error = $error." - ".$email_address." <br />";
+                }
+                return back()->withError($error);
             }
-            return back()->withError('Loi');
+            return back()->with('thongbao','Từ chối thành công');
         }
-        return back()->with('thongbao','Từ chối thành công');
+        else return back()->withErrors($this->checkSendMail($request->request));
+
+    }
+    
+    # Kiem tra send Email
+    public function checkSendMail($request) {
+        
+        $rules = [
+            'Email' =>'required|email|max:255', 
+        ];
+        $messages = [
+            'Email.required' => 'Email là trường bắt buộc',
+            'Email.max' => 'Tên email không quá 255 ký tự',
+            'Email.email' => 'Email không đúng định dạng',
+        ];
+        $validator = Validator::make($request->all(), $rules, $messages);
+        $result = 'Success';
+        if ($validator->fails()) {
+            $result = ($validator->messages()->first());
+        }
+        return $result;
     }
     
     # Kiem tra du lieu dau vao

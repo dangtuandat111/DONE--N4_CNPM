@@ -67,7 +67,7 @@
     padding: 4em;
     position: relative;
 }
-#input {
+#inputEmail {
     padding: 10px 30px;
     background: rgba(255, 255, 255, 0.6);
     width: 100%;
@@ -276,3 +276,18 @@
     background-image: none;
     background-color: #f48840;
 }
+
+/* ------------------------------------------------------------------- 
+ * ## Message
+ * ------------------------------------------------------------------- */
+
+ .alert {
+    position: fixed;
+    top: 35%;
+    left: 90%;
+    z-index: 9999;
+    border-radius: 25px;
+    width: auto;
+    padding: 20px;
+    max-width: 200px;
+  }

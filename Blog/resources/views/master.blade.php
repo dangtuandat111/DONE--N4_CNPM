@@ -52,7 +52,7 @@
     <header class="">
         <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="../public/home">
+            <a class="navbar-brand" href="{{ url('/home') }}">
                 <h2>Blog<em>.</em><mark>CĐCN Phần mềm 12</mark></h2>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,19 +61,19 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="../public/">
+                        <a class="nav-link" href="{{ url('/') }}">
                             HOME
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../public/Category/Travel" name = "Travel" >Travel</a>
+                        <a class="nav-link" href="{{ url('/Category/Travel') }}" name = "Travel" >Travel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../public/Category/Food">Food</a>
+                        <a class="nav-link" href="{{ url('/Category/Food') }}">Food</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../public/Category/Vehicle">Vehicle</a>
+                        <a class="nav-link" href="{{ url('/Category/Vehicle') }}">Vehicle</a>
                     </li>
                     </li>
                     @if(Auth::check())
@@ -156,18 +156,48 @@
     <!-- Footer Here -->
     <footer>
         <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <ul class="social-icons">
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Behance</a></li>
-                    <li><a href="#">Linkedin</a></li>
-                    <li><a href="#">Dribbble</a></li>
-                </ul>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="social-icons">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Behance</a></li>
+                        <li><a href="#">Linkedin</a></li>
+                        <li><a href="#">Dribbble</a></li>
+                    </ul>
+                </div>
             </div>
-            
-        </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6 style = "color:white; font-size:2rem; padding-bottom:10px">About</h6>
+                    <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6 style = "color:white; font-size:2rem; padding-bottom:10px">Categories</h6>
+                    <ul class="footer-links">
+                    <li><a href="#">Travel</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Vehicle</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <h6 style = "color:white; font-size:2rem; padding-bottom:10px">Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Login/Register</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class= "row" style ="padding:15px;">
+                <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by <a href="#">CĐCN PHẦN MỀM 12</a>.</p>
+          </div>
+            </div>
         </div>
     </footer>  
     <!-- Footer End Here -->
@@ -176,9 +206,7 @@
     
     <!-- Modal End here -->
 
-    <!-- Add script Here -->
-    @yield('Script')
-    <!-- Add script Here -->
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="{{ asset('Blog_resources/vendor/jquery/jquery.min.js') }}"></script>
@@ -205,6 +233,10 @@
         }
 
     </script>
+
+    <!-- Add script Here -->
+    @yield('Script')
+    <!-- Add script Here -->
 
   </body>
 </html>
