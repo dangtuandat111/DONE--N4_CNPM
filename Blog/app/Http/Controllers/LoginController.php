@@ -52,7 +52,7 @@ class LoginController extends Controller
         
         if($this->checkSendMail($request->request) == 'Success') {
             $mail = $request->Email;
-            Mail::send('Email',[$mail],function($message) use ($mail) {
+            Mail::send('Email',['mail' => $mail],function($message) use ($mail) {
                 $message->to($mail,'');
             });
     
@@ -64,7 +64,7 @@ class LoginController extends Controller
                 }
                 return back()->withError($error);
             }
-            return back()->with('thongbao','Từ chối thành công');
+            return back()->with('thongbao','Success send email.');
         }
         else return back()->withErrors($this->checkSendMail($request->request));
 
@@ -77,9 +77,9 @@ class LoginController extends Controller
             'Email' =>'required|email|max:255', 
         ];
         $messages = [
-            'Email.required' => 'Email là trường bắt buộc',
-            'Email.max' => 'Tên email không quá 255 ký tự',
-            'Email.email' => 'Email không đúng định dạng',
+            'Email.required' => 'Email is required field',
+            'Email.max' => 'Email name should not exceed 255 characters',
+            'Email.email' => 'Email invalidate',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
         $result = 'Success';
@@ -96,12 +96,11 @@ class LoginController extends Controller
             'Password' => 'required|min:1|regex:/(^([a-zA-z\d]+)(\d+)?$)/'
         ];
         $messages = [
-            'Email.required' => 'Email là trường bắt buộc',
-            'Email.max' => 'Tên email không quá 255 ký tự',
-            'Email.email' => 'Email không đúng định dạng',
-            'Email.regex' => 'Email không đúng định dạng',
-            'Password.required' => 'Mật khẩu là trường bắt buộc',
-            'Password.min' => 'Mật khẩu phải chứa ít nhất 1 ký tự',
+            'Email.required' => 'Email is required field',
+            'Email.max' => 'Email name should not exceed 255 characters',
+            'Email.email' => 'Email invalidate',
+            'Password.required' => 'Email is required field',
+            'Password.min' => 'Password invalidate',
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
 

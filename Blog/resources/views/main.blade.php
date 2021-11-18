@@ -2,24 +2,7 @@
 
 @section('Main')
 
-<!-- Message here -->
-@if(session('thongbao')) 
-  <div class="alert alert-success " id = "alert" onmouseover="HideMess();">
-    <span class="closebtn" id>&times;</span>  
-    <strong>Thông báo!</strong><br>
-    {{session('thongbao')}}
-  </div>
-@endif
 
-@if(count($errors) > 0) 
-  <div class="alert alert-danger" id = "alert" onmouseover="HideMess();">  
-    <strong>Lỗi!</strong><br>
-    @foreach ($errors->all() as $error)
-      {{ $error }}
-    @endforeach
-  </div>
-@endif
-<!-- End Message here -->
 
 <!-- Side-bar Here -->
 <div class = "share-side-bar">
@@ -212,14 +195,5 @@
 	</div>
 </div>
 <!-- Email Regist End Here -->
-@endsection
-
-@section('Script')
-<script>
-    function HideMess() {
-        $('#alert').fadeOut(1500);
-    }
-        
-</script>
 
 @stop()

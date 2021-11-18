@@ -29,7 +29,10 @@ Route::post('/RegistEmail', 'LoginController@sendMail');
 // Sau khi dang nhap
 Route::group(['middleware' => 'auth' ], function() {
     Route::get('/Logout', 'LoginController@Logout');
+    Route::get('/Filter', 'CatController@filterPostTravel');
+    Route::get('/FilterTag', 'CatController@filterPostTravelTag');
 });
 
+
 // Lay bai viet thuoc cat
-Route::get('/Category/Travel', 'CatController@getPost');
+Route::get('/Category/Travel', 'CatController@getPostTravel');

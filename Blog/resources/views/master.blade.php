@@ -149,6 +149,26 @@
     </div>
     <!-- Banner Ends Here -->
 
+    <!-- Message here -->
+    @if(session('thongbao')) 
+    <div class="alert alert-success " id = "alert" onmouseover="HideMess();">
+        <span class="closebtn" id>&times;</span>  
+        <strong>Thông báo!</strong><br>
+        {{session('thongbao')}}
+    </div>
+    @endif
+
+    @if(count($errors) > 0) 
+    <div class="alert alert-danger" id = "alert" onmouseover="HideMess();">  
+        <strong>Lỗi!</strong><br>
+        @foreach ($errors->all() as $error)
+        {{ $error }}
+        @endforeach
+    </div>
+    @endif
+    <!-- End Message here -->
+
+
     <!-- Main - Change Here -->
     @yield('Main')
     <!-- Main - Change Here -->
@@ -169,12 +189,12 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-6">
-                    <h6 style = "color:white; font-size:2rem; padding-bottom:10px">About</h6>
+                    <h6 style = "color:white; font-size:2rem; padding-bottom:10px;text-align:left">About</h6>
                     <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
                 </div>
 
                 <div class="col-xs-6 col-md-3">
-                    <h6 style = "color:white; font-size:2rem; padding-bottom:10px">Categories</h6>
+                    <h6 style = "color:white; font-size:2rem; padding-bottom:10px;text-align:left">Categories</h6>
                     <ul class="footer-links">
                     <li><a href="#">Travel</a></li>
                     <li><a href="#">Food</a></li>
@@ -183,7 +203,7 @@
                 </div>
 
                 <div class="col-xs-6 col-md-3">
-                    <h6 style = "color:white; font-size:2rem; padding-bottom:10px">Quick Links</h6>
+                    <h6 style = "color:white; font-size:2rem; padding-bottom:10px;text-align:left">Quick Links</h6>
                     <ul class="footer-links">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About us</a></li>
@@ -236,6 +256,13 @@
 
     <!-- Add script Here -->
     @yield('Script')
+
+    <script>
+        function HideMess() {
+            $('#alert').fadeOut(1500);
+        }
+            
+    </script>
     <!-- Add script Here -->
 
   </body>
