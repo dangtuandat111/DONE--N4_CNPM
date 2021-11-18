@@ -25,11 +25,12 @@ class HomeController extends Controller
 
         $tags = [];
         foreach($recent_posts as $recent_post) {
+            //echo ($recent_post->Id_Tag."<br>");
             $tag = DB::table('tag')->where('id','=',$recent_post->Id_Tag)->get('Title');
             
+            //echo ($tag[0]->Title."<br>");
             array_push($tags,[$recent_post->id,$tag[0]->Title]);
         }
-
         $popular_posts = DB::table('posts')->limit(6)->orderBy('Views','desc')->get();
         //dd($tags[0]);
         return view('main', ['banners' => $banners, 'cats' => $cats , 'cmts' => $cmts , 'tags' => $tags , 

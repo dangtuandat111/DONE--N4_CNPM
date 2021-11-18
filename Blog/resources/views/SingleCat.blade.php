@@ -1,5 +1,20 @@
 @extends('master')
+@section ('Title', 'Travel')
 @section('Main')
+
+<!-- Side-bar Here -->
+<div class = "share-side-bar">
+    <nav>
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+            <li><a href="#"><i class="fab fa-twitter" ></i><span>Twitter</span></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i><span>Youtube</span></a></li>
+        </ul>
+    </nav>
+</div>
+<!-- Side-bar End Here -->
+
 <div class="blog-posts grid-system">
   <div class="container">
     <div class="row">
@@ -20,18 +35,18 @@
                         @endif
                     @endforeach
                   </span>
-                  <a href="post-details.html">
+                  <a href="{{ url('/BlogDetail/'.$post->Slug) }}">
                     <h4><?php  echo 'Post name:'.$post->Title ;?></h4>
                   </a>
                   <ul class="post-info">
                     <li>
-                      <a href="#"><?php  echo 'Date: '.\Carbon\Carbon::parse($post->Created_at)->format('d/m/Y') ;?></a>
+                      <a><?php  echo 'Date: '.\Carbon\Carbon::parse($post->Created_at)->format('d/m/Y') ;?></a>
                     </li>
                     <li>
-                      <a href="#"><?php  echo 'Views: '.$post->views ;?></a>
+                      <a><?php  echo 'Views: '.$post->views ;?></a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a>
                         @foreach($cmts as $cmt) 
                             @if($cmt[0] == $post->Id_Category) 
                                 <?php  echo 'Comments:'.$cmt[1];?>
@@ -113,6 +128,11 @@
 <script>
 
   var chosenTag ='';
+  var TravelActive = document.getElementsByClassName("nav-item");
+  TravelActive[0].className = "classname";
+  TravelActive[0].className = "nav-item active";
+
+
   $("#search_form").submit(function (e) {
     e.preventDefault();
     var searchText = $('input[name=searchText]').val();
@@ -123,8 +143,17 @@
       success:function(response) {
         $("#postShow").html(response);
       },
-      error :function(response) {
-        $("body").append("<div class='alert alert-danger' id = 'alert' onmouseover='HideMess();'>  <strong>Lỗi!</strong><br> Sign in to use this feature </div> ");
+      
+      // error :function(response) {
+      //   $("body").append("<div class='alert alert-danger' id = 'alert' onmouseover='HideMess();'>  <strong>Lỗi!</strong><br> Sign in to use this feature </div> ");
+      // },
+      statusCode: {
+        404: function() {
+          return abort(404);
+        },
+        500: function() {
+          $("body").append("<div class='alert alert-danger' id = 'alert' onmouseover='HideMess();'>  <strong>Lỗi!</strong><br> Error 500 </div> ");
+        }
       }
     });
   });
@@ -148,11 +177,20 @@
       success:function(response) {
         $("#postShow").html(response);
       },
-      error :function(response) {
-        $("body").append("<div class='alert alert-danger' id = 'alert' onmouseover='HideMess();'>  <strong>Lỗi!</strong><br> Sign in to use this feature </div> ");
+      statusCode: {
+        404: function() {
+          return abort(404);
+        },
+        500: function() {
+          $("body").append("<div class='alert alert-danger' id = 'alert' onmouseover='HideMess();'>  <strong>Lỗi!</strong><br> Error 500 </div> ");
+        }
       }
     });
   });
+
+  function HideMess() {
+  }
+
 
 </script>
 @stop() 

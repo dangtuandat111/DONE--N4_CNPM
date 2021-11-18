@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 class CatController extends Controller
 {
-    //
+    // Lay ra bai viet ve Travel 
     public function getPostTravel(Request $request) {
         $banners = DB::table('posts')->limit(6)->get();
 
@@ -28,6 +28,7 @@ class CatController extends Controller
         return view('SingleCat', ['banners' => $banners, 'cats' => $cats, 'cmts' => $cmts,'posts' => $posts,'tags' => $tags]);
     }
 
+    // Filter cho bai viet ve Travel theo Search
     public function filterPostTravel(Request $request) {
         if(request()->ajax()) {
             $banners = DB::table('posts')->limit(6)->get();
@@ -48,8 +49,10 @@ class CatController extends Controller
             
             return view('SubViews.SingleCatView',['posts' => $posts, 'tags' => $tags,'cmts' => $cmts,'cats' => $cats]);
         }
+        else return back();
     }
 
+    // Filter cho bai viet ve Travel theo Tag
     public function filterPostTravelTag(Request $request) {
         if(request()->ajax()) {
             $banners = DB::table('posts')->limit(6)->get();
@@ -71,5 +74,6 @@ class CatController extends Controller
             
             return view('SubViews.SingleCatView',['posts' => $posts, 'tags' => $tags,'cmts' => $cmts,'cats' => $cats]);
         }
+        else return back();
     }
 }

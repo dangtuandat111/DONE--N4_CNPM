@@ -24,7 +24,9 @@
 }
 
 .blog-posts .down-content p {
-    height: 230px;
+    min-height: 230px;
+    border-top:0px;
+    border-color: #dbdbdb;
 }
 
 .navbar .navbar-nav a.nav-link {
@@ -299,6 +301,10 @@
      text-align:left
  }
 
+ footer {
+     margin-top:10px;
+ }
+
   /* ------------------------------------------------------------------- 
  * ## Page link
  * ------------------------------------------------------------------- */
@@ -319,3 +325,142 @@
  .sidebar .tags ul li {
     background-color: white;
  }
+  /* ------------------------------------------------------------------- 
+ * ## Post
+ * ------------------------------------------------------------------- */
+
+ .detail .down-content blockquote{
+    margin-left: 0;
+    margin-right: 0;
+    background-color: white;
+    padding: 20px;
+    /*box-shadow: 0 0 15px 0 rgb(0 0 0 / 5%);*/
+    position: relative;
+    border-left: 0;
+    overflow: hidden;
+    padding-left: 35px;
+    border-left: 20px solid #2cccff;
+
+}
+
+
+.detail ul:not(:first-child) {
+	margin: 0;
+	padding-left: 1.2rem;
+}
+  
+.detail ul:not(:first-child) > li {
+	position: relative;
+	list-style-type: none;
+	padding-left: 2.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.detail ul:not(:first-child) > li {
+	position: relative;
+	list-style-type: none;
+	padding-left: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+.detail ul:not(:first-child) > li >ul>li {
+	position: relative;
+	list-style-type: none;
+	padding-left: 2rem;
+	margin-bottom: 0.5rem;
+}
+  
+
+
+.detail .down-content ul:not(:first-child) li::before {
+	  content: '';
+	  display: block;
+	  position: absolute;
+	  left: 0;
+	  top: 2px;
+	  width: 5px;
+	  height: 11px;
+	  border-width: 0 2px 2px 0;
+	  border-style: solid;
+	  border-color: #00a8a8;
+	  transform-origin: bottom left;
+	  transform: rotate(45deg);
+  }
+
+  .detail .down-content ul:not(:first-child) li > ul >li::before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0px;
+	top: 2px;
+	width: 5px;
+	height: 11px;
+	border-width: 0 2px 2px 0;
+	border-style: solid;
+	border-color: #00a8a8;
+	transform-origin: bottom left;
+	transform: rotate(45deg);
+}
+
+.detail .down-content ul.post-info li {
+	display: inline-block;
+	margin-right: 8px;
+}
+
+.detail .down-content ul.post-info li::before {
+	content: none;
+	padding : 0px;
+}
+
+.detail .down-content ul.post-info li {
+	padding : 0px;
+}
+
+.detail .down-content ul.post-info li::after {
+	content: '|';
+	color: #aaa;
+	margin-left: 8px;
+}
+
+.detail .down-content ul.post-info {
+	margin-left: 0px
+}
+
+.detail .down-content img {
+	width: 100px;
+	height: 100px;
+	display: flex;
+}
+
+code {
+	background-color: black;
+} 
+pre > code {
+	display: block;
+	white-space: pre;
+	line-height: 2;
+	padding: 0;
+	margin: 0;
+	background-color: #efefef;
+  }
+  
+pre > code {
+	border: none;
+  }
+
+.detail .down-content p {
+    height: auto!important;
+    min-height: initial;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+}
+.detail h1,h2,h3,h4 {
+    padding-top:10px;
+}
+
+
+
+.detail .down-content img {
+    width:100%;
+    height:100%;
+}

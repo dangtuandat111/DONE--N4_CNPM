@@ -1,7 +1,7 @@
 @extends('master')
 
+@section ('Title', 'Home')
 @section('Main')
-
 
 
 <!-- Side-bar Here -->
@@ -19,7 +19,7 @@
 
 <!-- Blog Posts Here -->
 <div class="blog-posts">
-    <div class="container">
+    <div class="container col-lg-8">
 
         <div class= "col-lg-12">
             <div class = "sidebar-item recent-posts">
@@ -47,15 +47,15 @@
                                         @endif
                                     @endforeach
                                     </span>
-                                    <a href="post-details.html"><h4><?php  echo 'Posts name:'.$recent_post->Title ;?></h4></a>
+                                    <a href="{{ url('/BlogDetail/'.$recent_post->Slug) }}"><h4><?php  echo 'Posts name:'.$recent_post->Title ;?></h4></a>
                                     <ul class="post-info">
-                                        <li><a href="#">
+                                        <li><a>
                                             <?php  echo 'Date: '.\Carbon\Carbon::parse($recent_post->Created_at)->format('d/m/Y') ;?>
                                         </a></li>
-                                        <li><a href="#">
+                                        <li><a>
                                             <?php  echo 'Views: '.$recent_post->views ;?>
                                         </a></li>
-                                        <li><a href="#">
+                                        <li><a>
                                         @foreach($cmts as $cmt) 
                                             @if($cmt[0] == $recent_post->Id_Category) 
                                                 <?php  echo 'Comments:'.$cmt[1];?>
@@ -85,7 +85,7 @@
                                             <div class="col-6">
                                                 <ul class="post-share">
                                                     <li><i class="fa fa-share-alt"></i></li>
-                                                    <li><a href="#">Facebook</a></li>
+                                                    <li><a>Facebook</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -133,27 +133,27 @@
                                 <ul>
                                     <li> CATEGORI </li>
                                     <li>
-                                        <a href="#"> 
-                                        @foreach($cats as $cat) 
-                                            @if ($cat->id == $popular_post->Id_Category)
-                                                <?php  echo $cat->Title ;?>
-                                            @endif
-                                        @endforeach
+                                    @foreach($cats as $cat) 
+                                        @if ($cat->id == $popular_post->Id_Category)
+                                        <a href="{{ url('/Category/'.$cat->Title) }}"> 
+                                            <?php  echo $cat->Title ;?>
                                         </a>
+                                        @endif
+                                    @endforeach
                                     </li>
                                 </ul>
                             </div>
                             <h2 class="article-title">
-                                <a href="#"> <?php  echo $popular_post->Title ;?> </a>
+                                <a> <?php  echo $popular_post->Title ;?> </a>
                             </h2>
                             <div class="article-meta">
                                 <ul>
                                 <li> <?php  echo \Carbon\Carbon::parse($popular_post->Created_at)->format('j-F-Y') ;?> </li>
-                                <li> Rosie </li>
+                                <li> Vũ </li>
                                 </ul>
                             </div>
                             <div class="article-actions">
-                                <a href="#" class="btn hvr-sweep-to-bottom">View Post </a>
+                                <a href="{{ url('/BlogDetail/'.$popular_post->Slug) }}" class="btn hvr-sweep-to-bottom">View Post </a>
                             </div>
                             </div>
                         </article>
@@ -179,8 +179,8 @@
                  <div class="subscribe-icon">
                     <i class="ico-mailbox"></i>
                 </div>
-				<h1 class="title is-1 has-text-black">Subcribe for more Post</h1>
-				<p class="has-text-black">*We've just use your Email to send notification only. </p>
+				<h1 class="title is-1 has-text-black">Want us to email you occasionally with our news?</h1>
+				<p class="has-text-black">*We've just used your Email to send notification only. </p>
 				<div class="mt-5">
                     <form method="post" action = "{{ url('/RegistEmail') }}">
                         <input type = "hidden" name = "_token" value = "{{ csrf_token() }}">

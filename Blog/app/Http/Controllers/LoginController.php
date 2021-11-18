@@ -13,6 +13,10 @@ use DB;
 use Illuminate\Support\Facades\Mail;
 class LoginController extends Controller
 {
+    public function RedirectLogin() {
+        return Redirect()->route('Login')->with('thongbao','Log in to use this feature.');
+    }
+
     // Dang nhap
     public function Login(Request $request) {
         if($request->isMethod('post')){ 
@@ -156,4 +160,6 @@ class LoginController extends Controller
         Auth::logout();
         return Redirect::to('/home');
     }
+
+
 }

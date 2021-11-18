@@ -7,7 +7,7 @@
         <meta name="author" content="TemplateMo" />
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet" />
 
-        <title>Stand CSS Blog by TemplateMo</title>
+        <title>Blog CĐCN PHẦN MỀM 12 - @yield('Title')</title>
 
         <!-- Arcticle Part -->
         <link rel='stylesheet' id='fancybox2_se111o-css' href="{{ asset('Blog_resources/wp-content/themes/thelondoner_v3/vendor/hover-css/hover-min.css') }}" type='text/css' media='all' />
@@ -46,7 +46,6 @@
     </div>  
     <!-- ***** Preloader End ***** -->
 
-
     <!-- TODO: Thay doi duong dan -->
     <!-- Header -->
     <header class="">
@@ -60,7 +59,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('/') }}">
                             HOME
                             <span class="sr-only">(current)</span>
@@ -190,32 +189,30 @@
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <h6 style = "color:white; font-size:2rem; padding-bottom:10px;text-align:left">About</h6>
-                    <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+                    <p class="text-justify">CĐCN PHẦN MỀM 12 <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
                 </div>
 
                 <div class="col-xs-6 col-md-3">
                     <h6 style = "color:white; font-size:2rem; padding-bottom:10px;text-align:left">Categories</h6>
                     <ul class="footer-links">
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Food</a></li>
-                    <li><a href="#">Vehicle</a></li>
+                    <li><a href="{{ url('/Category/Travel') }}">Travel</a></li>
+                    <li><a href="{{ url('/Category/Food') }}">Food</a></li>
+                    <li><a href="{{ url('/Category/Vehicle') }}">Vehicle</a></li>
                     </ul>
                 </div>
 
                 <div class="col-xs-6 col-md-3">
                     <h6 style = "color:white; font-size:2rem; padding-bottom:10px;text-align:left">Quick Links</h6>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Login/Register</a></li>
+                        <li><a href="{{ url('/home') }}">Home</a></li>
+                        <li><a href="{{ url('/About-us') }}">About us</a></li>
+                        <li><a href="{{ url('/Login') }}">Login/Register</a></li>
                     </ul>
                 </div>
             </div>
             <hr>
             <div class= "row" style ="padding:15px;">
-                <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by <a href="#">CĐCN PHẦN MỀM 12</a>.</p>
+                <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by <a href="#">CĐCN PHẦN MỀM 12</a>.</p>
           </div>
             </div>
         </div>
@@ -259,10 +256,17 @@
 
     <script>
         function HideMess() {
-            $('#alert').fadeOut(1500);
+            $('#alert').fadeOut(1000);
+            setTimeout(() => { $('#alert').remove(); }, 1000);
+
         }
-            
-    </script>
+
+        console.log(1);
+        var TravelActive = document.getElementsByClassName("nav-item");
+        console.log(3);
+        TravelActive[0].className = "nav-item active";
+                    
+        </script>
     <!-- Add script Here -->
 
   </body>

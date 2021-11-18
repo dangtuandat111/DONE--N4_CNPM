@@ -20,6 +20,7 @@ Route::get('/home', 'HomeController@index');
 
 // Dang nhap
 Route::match(['get','post'],'Login', ['as' => 'Login', 'uses' =>'LoginController@Login']);
+Route::get('RedirectLogin', ['as' => 'RedirectLogin', 'uses' =>'LoginController@RedirectLogin']);
 
 // Dang ki
 Route::match(['get','post'],'Register', ['as' => 'Register', 'uses' =>'LoginController@Register']);
@@ -31,6 +32,9 @@ Route::group(['middleware' => 'auth' ], function() {
     Route::get('/Logout', 'LoginController@Logout');
     Route::get('/Filter', 'CatController@filterPostTravel');
     Route::get('/FilterTag', 'CatController@filterPostTravelTag');
+
+    Route::get('/BlogDetail/{Slug}', ['as' => 'blog.single', 'uses' => 'PostsController@getSingle'])
+    ->where('slug', '[\w\d\-\_]+');
 });
 
 
