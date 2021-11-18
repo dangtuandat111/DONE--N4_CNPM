@@ -51,6 +51,8 @@ class PostsController extends Controller
         try
         {
             $path = public_path().'\Blog_resources\post-content'.'/'.$posts[0]->Content;
+            
+            
             // $contents = fopen($path,'r');
             // $contents = fread($contents,filesize($path));
             $banners = DB::table('posts')->limit(6)->get();

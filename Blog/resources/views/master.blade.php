@@ -99,7 +99,7 @@
 
     <!-- Page Content -->
     <!-- Banner Starts Here -->
-    <div class="main-banner header-text">
+    <div class="main-banner header-text" id="main-banner">
         <div class="container-fluid">
 
         <div class="owl-banner owl-carousel">
@@ -118,23 +118,21 @@
                             @endforeach
                             </span>
                         </div>
-                        <a href="post-details.html"><h4>
+                        <a href="{{ url('/BlogDetail/'.$banner->Slug) }}"><h4>
                             <?php  echo 'Posts name:'.$banner->Title ;?>
                         </h4></a>
                         <ul class="post-info">
-                            <li><a href="#">
+                            <li><a >
                                 <?php  echo 'Date: '.\Carbon\Carbon::parse($banner->Created_at)->format('d/m/Y') ;?>   
                             </a></li>
-                            <li><a href="#">
+                            <li><a >
                                 <?php  echo 'Views: '.$banner->views ;?>   
                             </a></li>
-                            <li><a href="#">
+                            <li><a>
                             @foreach($cmts as $cmt) 
                                 @if($cmt[0] == $banner->Id_Category) 
                                     <?php  echo 'Comments:'.$cmt[1];?>
-                                
                                 @endif
-                            
                             @endforeach
                             </a></li>
                         </ul>
@@ -149,22 +147,6 @@
     <!-- Banner Ends Here -->
 
     <!-- Message here -->
-    @if(session('thongbao')) 
-    <div class="alert alert-success " id = "alert" onmouseover="HideMess();">
-        <span class="closebtn" id>&times;</span>  
-        <strong>Thông báo!</strong><br>
-        {{session('thongbao')}}
-    </div>
-    @endif
-
-    @if(count($errors) > 0) 
-    <div class="alert alert-danger" id = "alert" onmouseover="HideMess();">  
-        <strong>Lỗi!</strong><br>
-        @foreach ($errors->all() as $error)
-        {{ $error }}
-        @endforeach
-    </div>
-    @endif
     <!-- End Message here -->
 
 

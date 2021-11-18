@@ -35,6 +35,9 @@ Route::group(['middleware' => 'auth' ], function() {
 
     Route::get('/BlogDetail/{Slug}', ['as' => 'blog.single', 'uses' => 'PostsController@getSingle'])
     ->where('slug', '[\w\d\-\_]+');
+
+    Route::get('/Profile', 'ProfileController@index');
+    Route::post('SubmitProfile', 'ProfileController@Submit');
 });
 
 

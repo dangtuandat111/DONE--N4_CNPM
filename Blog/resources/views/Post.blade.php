@@ -38,7 +38,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-8">
+                        <!-- <div class="col-lg-8">
                             <div class="sidebar-item comments">
                             <div class="sidebar-heading">
                                 <h2>4 comments</h2>
@@ -84,7 +84,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <hr>
                     </div>

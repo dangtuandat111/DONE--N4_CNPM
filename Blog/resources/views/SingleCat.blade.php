@@ -2,6 +2,24 @@
 @section ('Title', 'Travel')
 @section('Main')
 
+@if(session('thongbao')) 
+  <div class="alert alert-success">
+    <span class="closebtn">&times;</span>  
+    <strong>Thông báo!</strong><br>
+    {{session('thongbao')}}
+  </div>
+@endif
+
+@if(count($errors) > 0) 
+  <div class="alert">
+    <span class="closebtn">&times;</span>  
+    <strong>Lỗi!</strong><br>
+    @foreach ($errors->all() as $error)
+      {{ $error }}
+    @endforeach
+  </div>
+@endif
+
 <!-- Side-bar Here -->
 <div class = "share-side-bar">
     <nav>
