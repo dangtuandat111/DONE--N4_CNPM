@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth' ], function() {
 
     Route::get('/Profile', 'ProfileController@index');
     Route::post('SubmitProfile', 'ProfileController@Submit');
+    Route::post('ResetPass', 'ProfileController@ResetPass');
 });
 
 

@@ -80,19 +80,11 @@
                     <h4 class="text-right">Profile Settings</h4>
                 </div><br>
             </div>
-            <form action="{{url('resetPass')}}" method="post">
+            <form action="{{url('ResetPass')}}" method="post">
                 <input type = "hidden" name = "_token" value = "{{ csrf_token() }}">
-                <div class="input-group mb-3">
-                    <input type="email" class="form-control" placeholder="Email" name = "Email" value = "{{old('Email')}}">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                        <span class="fas fa-envelope"></span>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Old Password" name = "Old_Password" >
+                    <input type="password" class="form-control" placeholder="Password" name = "Old_Password" >
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
@@ -101,7 +93,7 @@
                 </div>
 
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password" name = "Password" >
+                    <input type="password" class="form-control" placeholder="New Password" name = "Password" >
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
@@ -110,7 +102,7 @@
                 </div>
 
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Confirm Password" name = "Confirm_Password">
+                    <input type="password" class="form-control" placeholder="Confirm New Password" name = "Confirm_Password">
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>

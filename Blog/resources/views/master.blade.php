@@ -162,16 +162,15 @@
                     <ul class="social-icons">
                         <li><a href="#">Facebook</a></li>
                         <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Behance</a></li>
-                        <li><a href="#">Linkedin</a></li>
-                        <li><a href="#">Dribbble</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Youtube</a></li>
                     </ul>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <h6 style = "color:white; font-size:2rem; padding-bottom:10px;text-align:left">About</h6>
-                    <p class="text-justify">CĐCN PHẦN MỀM 12 <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+                    <p class="text-justify">Blog <i>CĐCN PHẦN MỀM 12</i>was born back in April 2014 on a surprisingly warm afternoon.In what seemed like an oasis of calm between assignments, WE (that’s us!) were talking about sharing our travel stories and photos with others like-minded travellers on the internet. So On that fateful day <i>CĐCN PHẦN MỀM 12</i> was online and ready to go!</p>
                 </div>
 
                 <div class="col-xs-6 col-md-3">
